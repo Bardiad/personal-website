@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{PAGE.lang or META.lang}}">
   <head>
     <meta charset="utf-8">
     
@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{meta.title}}</title>
+    <title>{{ PAGE.title or META.title}}</title>
     <meta name='description' content='{{ PAGE.description }}'>    
   </head>
 

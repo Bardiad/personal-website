@@ -2,32 +2,33 @@
 
 const { src, dest, series } = require( 'gulp' );
 const fs                    = require('fs');
-const nunjucksRender        = require('gulp-nunjucks-render');
+const nunjucks              = require('gulp-nunjucks-render');
 const rename 				= require('gulp-rename');
+const graymatter            = require('gulp-gray-matter');
 
 const util     = require("./common");
 const config   = util.loadConfig('gulp.config.json');
 
+const _env = process.env.NODE_ENV || 'development';
+
+console.log("###current environment: " + _env);
+
+const _isProd = _env === 'production';
 
 function _getEnvironment() {
-
-    const env = process.env.NODE_ENV || 'development';
-
-    console.log("env is: " + env);
-
     return function(environment) {
         //Manage custom filters
-        const metadata = util.getData(global.SOURCES_BASE_PATH + "/data/data.meta.json");
+        let metadata = util.getData(global.SOURCES_BASE_PATH + "/data/data.meta.json");
         const contentdata = util.getData(global.SOURCES_BASE_PATH + "/data/data.content.json");
-        const postdata = util.getData(global.SOURCES_BASE_PATH + "/data/data.posts.json");                
+        const postdata = util.getData(global.SOURCES_BASE_PATH + "/data/data.posts.json");
 
-        const isProd = env === 'production';
-        console.log("isProd is: " + isProd);
+        //Add prod flag to metadata object
+        metadata = { ...metadata, isProd: _isProd};
 
         //Add Global Data to nunjucks
-        environment.addGlobal('meta', metadata);
-        environment.addGlobal('content', metadata);
-        environment.addGlobal('posts', postdata);     
+        environment.addGlobal('META', metadata);
+        environment.addGlobal('CONTENT', metadata);
+        environment.addGlobal('POSTS', postdata);    
 
     }    
 }
@@ -39,7 +40,8 @@ function _build(callback){
     	global.SOURCES_BASE_PATH + '/*.njk',
     	global.SOURCES_BASE_PATH + '/pages/**/*.njk',
   	])
-    .pipe(nunjucksRender({ path: [ global.SOURCES_BASE_PATH + "/templates/" ], manageEnv:env, envOptions: { autoescape:false } }))
+    .pipe(graymatter())
+    .pipe(nunjucks({ path: [ global.SOURCES_BASE_PATH + "/templates/" ], manageEnv:env, envOptions: { autoescape:false } }))
     .pipe(rename(function (path){
     	path.extname = ".html";
     }))

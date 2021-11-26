@@ -5,26 +5,20 @@
 /* ******* */
 const { watch, series, src, dest, parallel, task } = require('gulp');
 const fs        = require('fs');
-const connect   = require('gulp-connect');
-
 
 const util     = require("./gulp/tasks/common");
 const config   = util.loadConfig('gulp.config.json');
 
-
+global.CONNECT = require('gulp-connect');
 global.BASE_PATH = __dirname;
 global.SOURCES_BASE_PATH = __dirname + config.project.source;
-global.CONNECT = connect;
-
 
 /* *************************** */
 /* Task Partials & Definitions */
 /* *************************** */
 const html_tasks = require("./gulp/tasks/html");
 
-
 /* Common Tasks */
-
 
 /* HTML Tasks */
 const _buildHTML = html_tasks.build;
@@ -40,16 +34,13 @@ function _startConnect(callback) {
 }
 
 function _watchFiles(callback) {
-    watch(config.project.watch, _buildHTML);
+    watch(config.project.watch, _buildTasks);
     callback();
 }
 
-
-
-const _buildTasks = parallel(_buildHTML, _watchFiles);
-const _serve = series(_startConnect, _buildTasks);
-
-
+/* Composite tasks */
+const _buildTasks = series(_buildHTML);
+const _serve = parallel(series(_buildTasks, _startConnect), _watchFiles);
 
 
 /* ***************** */
@@ -57,4 +48,5 @@ const _serve = series(_startConnect, _buildTasks);
 /* ***************** */
 exports.default        = _serve;
 exports.serve          = _serve;
-exports["build:html"]  = _buildTasks;
+exports.watch          = series(_watchFiles, _buildTasks)
+exports["build:html"]  = _buildHTML;
