@@ -1,0 +1,8 @@
+{
+	"project" : {
+		"source"  		: "/src",
+		"destination" 	: "/dist",
+		"watch" : ["./src/**/*"]	
+	},
+	"tinify": "vfQj6R6kf8wYKmQLqpgZkV54RLpvtQ31"
+}
