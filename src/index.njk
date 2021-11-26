@@ -1,10 +1,12 @@
 ---
 PAGE:
- title: This is a page title
- description: this is the page description
+ title: Home page title
+ description: Home page description 
 ---
 
 {% extends "layouts/layout.landing.njk" %}
 
 {% block main %}
+    this is index.html using the landing page template
+    <a href="about.html">Go to about page</a>
 {% endblock %}

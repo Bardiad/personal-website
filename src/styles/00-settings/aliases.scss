@@ -1,0 +1,20 @@
+/* Alias Definitions */
+
+/* Import Tokens */
+@use "colors" as color;
+@use "typography" as type;
+@use "sizes" as size;
+
+/* Text Colors */
+$text-color-default: color.$global-color-grey-900;
+$text-color-light:   color.$global-color-grey-500;
+$text-color-dark:    color.$global-color-grey-700;
+
+$text-color-link: color.$global-color-ocean-blue-400;
+$text-color-link-hover: color.$global-color-ocean-blue-600;
+
+/* Font Stacks */
+$fontstack-primary:   type.$global-font-sans;
+$fontstack-secondary: type.$global-font-serif;
+$fontstack-monospace: type.$global-font-monospace;
+$fontstack-special:   type.$global-font-special;

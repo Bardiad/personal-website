@@ -17,11 +17,13 @@ global.SOURCES_BASE_PATH = __dirname + config.project.source;
 /* Task Partials & Definitions */
 /* *************************** */
 const html_tasks = require("./gulp/tasks/html");
+const sass_tasks = require("./gulp/tasks/sass");
 
 /* Common Tasks */
 
 /* HTML Tasks */
 const _buildHTML = html_tasks.build;
+const _buildCSS = sass_tasks.build;
 
 /* Utility & Custom Tasks */
 function _startConnect(callback) {
@@ -39,14 +41,15 @@ function _watchFiles(callback) {
 }
 
 /* Composite tasks */
-const _buildTasks = series(_buildHTML);
+const _buildTasks = series(_buildHTML, _buildCSS);
 const _serve = parallel(series(_buildTasks, _startConnect), _watchFiles);
-
 
 /* ***************** */
 /* Task Registration */
 /* ***************** */
-exports.default        = _serve;
-exports.serve          = _serve;
-exports.watch          = series(_watchFiles, _buildTasks)
-exports["build:html"]  = _buildHTML;
+exports.default = _serve;
+exports.serve = _serve;
+exports.watch = series(_watchFiles, _buildTasks)
+exports["build:html"] = _buildHTML;
+exports["build:css"] = _buildCSS;
+exports["build:all"] = _buildTasks;

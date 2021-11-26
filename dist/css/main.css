@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&family=Ubuntu+Mono&display=swap");
+/* Colour Tokens */
+/* Alias Definitions */
+/* Import Tokens */
+/* Text Colors */
+/* Font Stacks */
+/* Import All Settings */
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
+  color: #1B1F2B;
+  line-height: 1.5;
+}
+
+a {
+  color: #455DA3;
+  text-decoration: none;
+}
+a:hover {
+  color: #122A70;
+  text-decoration: underline;
+}

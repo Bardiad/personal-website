@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Bardiad/personal-website#readme",
   "dependencies": {
+    "autoprefixer": "^10.4.0",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-connect": "^5.7.0",

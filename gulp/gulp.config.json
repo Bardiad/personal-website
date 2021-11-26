@@ -2,7 +2,14 @@
 	"project" : {
 		"source" : "/src",
 		"destination" : "/dist",
-		"watch" : ["./src/**/*"]	
+		"watch" : ["./src/**/*"],
+		"inputs" : {
+			"scss" : ["./src/styles/*.scss"]
+		},
+		"outputs" : {
+			"css" : ["./dist/css/"]
+		}
 	},
+
 	"tinify": ""
 }
