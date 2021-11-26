@@ -2,14 +2,17 @@
 <html lang="{{PAGE.lang or META.lang}}">
   <head>
     <meta charset="utf-8">
-    
+
     <!-- IE compatibility -->
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ PAGE.title or META.title}}</title>
-    <meta name='description' content='{{ PAGE.description }}'>    
+    <meta name='description' content='{{ PAGE.description }}'>
+
+    {% block pageStyles %}
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    {% endblock %}  
   </head>
 
   <body>

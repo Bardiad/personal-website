@@ -1,0 +1,17 @@
+{% extends "_base.njk" %}
+
+{# load custom layout css here, don't forget to call {{ super() }} to load main css file #}
+{% block pageStyles %}
+  {{- super() -}}
+  <link rel="stylesheet" type="text/css" href="css/inner-page.css">  
+{% endblock %}
+
+{% block body %}
+<header>Inner page  Header</header>
+
+<main role='main'>
+{% block main %}{% endblock %}
+</main>
+
+<footer>Inner page footer</footer>
+{% endblock %}
