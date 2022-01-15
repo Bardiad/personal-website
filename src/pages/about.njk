@@ -1,12 +1,12 @@
 ---
 PAGE:
  title: Home page title
- description: Home page description 
+ description: Home page description
+ layout: layout.inner-page.njk
 ---
-
-{% extends "layouts/layout.inner-page.njk" %}
+{% extends "layouts/" + PAGE.layout %}
 
 {% block main %}
-    this is the about page, using the inner page template
-    <a href="/">Go home</a>
+about.html
+<a href="/">Go home</a>
 {% endblock %}

@@ -6,24 +6,15 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass')(require('sass'));
 
 const util = require("./common");
-const config = util.loadConfig('gulp.config.json');
-
-const _env = process.env.NODE_ENV || 'development';
-
-const inputs = config.project.inputs.scss;
-const outputs = config.project.outputs.css;
+const config = util.getConfig('gulp.config.json');
 
 const opts = {"outputStyle" : "expanded"};
 
-console.log(inputs);
-console.log(outputs);
-console.log(opts);
-
-function _build(callback) {
-    return src(inputs)
+function _buildCSS(callback) {
+    return src("./src/_temp/scss/main.scss")
         .pipe(sass.sync( opts ).on('error', sass.logError))
         .pipe(postcss([require('autoprefixer')], { browsers: ['last 2 versions', 'ie > 10'] }))            
-        .pipe(dest(outputs));
+        .pipe(dest( "./dist/css/" ));
 }
 
-exports.build = _build;
+exports.buildCSS = _buildCSS;

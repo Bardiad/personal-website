@@ -2,16 +2,16 @@
 
 body {
 	font-family: config.$alias-fontstack-primary;
-	color:config.$alias-text-color-default;
+	color:config.$alias-color-text-default;
 	line-height:1.5;
 }
 
 a {
-	color:config.$alias-text-color-link;
+	color:config.$alias-color-text-link;
 	text-decoration:none;
 
 	&:hover {
-		color:config.$alias-text-color-link-hover;
+		color:config.$alias-color-text-link-hover;
 		text-decoration:underline;
 	}
 }

@@ -7,47 +7,47 @@ const rename = require('gulp-rename');
 const graymatter = require('gulp-gray-matter');
 
 const util = require("./common");
-const config = util.loadConfig('gulp.config.json');
-
-const _env = process.env.NODE_ENV || 'development';
-
-console.log("###current environment: " + _env);
-
-const _isProd = _env === 'production';
+const config = util.getConfig('gulp.config.json');
 
 function _getEnvironment() {
     return function(environment) {
-        //Manage custom filters
-        let metadata = util.getData(global.SOURCES_BASE_PATH + "/data/data.meta.json");
-        const contentdata = util.getData(global.SOURCES_BASE_PATH + "/data/data.content.json");
-        const postdata = util.getData(global.SOURCES_BASE_PATH + "/data/data.posts.json");
+        //Hold various data objects
+        const data = {
+            "META"    : util.getData("data.meta.json"),
+            "CONTENT" : util.getData("data.content.json"),
+            "POSTS"   : util.getData("data.posts.json"),
+            "STYLES"  : util.getData("styles.json")
+        }
 
-        //Add prod flag to metadata object
-        metadata = { ...metadata, isProd: _isProd};
-
-        //Add Global Data to nunjucks
-        environment.addGlobal('META', metadata);
-        environment.addGlobal('CONTENT', metadata);
-        environment.addGlobal('POSTS', postdata);    
+        //Add data to nunjucks environment
+        environment.addGlobal('data', data); 
     }    
 }
 
-function _build(callback){
-    const env = _getEnvironment();
+function _buildHTML(callback){
+    const _env = _getEnvironment();
 
     return src([
-      global.SOURCES_BASE_PATH + '/*.njk',
+      global.SOURCES_BASE_PATH + '/index.njk',
       global.SOURCES_BASE_PATH + '/pages/**/*.njk',
     ])
     .pipe(graymatter())
-    .pipe(nunjucks({ path: [ global.SOURCES_BASE_PATH + "/templates/" ], manageEnv:env }))
-    .pipe(rename(function (path){
-      path.extname = ".html";
-    }))
+    .pipe(nunjucks({ path: [ global.SOURCES_BASE_PATH + "/templates/" ], manageEnv:_env }))
     .pipe(dest( global.BASE_PATH + "/dist/" ))
     .pipe(global.CONNECT.reload());
-    callback();
 };
 
-exports.build   = _build;
-exports.getEnv  = _getEnvironment;
+function _buildSCSS(callback) {
+    const _env = _getEnvironment();
+
+    return src([global.SOURCES_BASE_PATH + '/styles/**/*.scss'])
+    .pipe(nunjucks({ path: [ global.SOURCES_BASE_PATH + "/styles/" ], manageEnv:_env }))
+    .pipe(rename(function(path){
+        path.extname = ".scss";
+    }))        
+    .pipe(dest( global.SOURCES_BASE_PATH + "/_temp/scss/" ))
+}
+
+exports.buildHTML     = _buildHTML;
+exports.buildSCSS     = _buildSCSS;
+exports.getEnv        = _getEnvironment;

@@ -1,21 +1,160 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&family=Ubuntu+Mono&display=swap");
-/* Colour Tokens */
-/* Alias Definitions */
-/* Import Tokens */
 /* Text Colors */
+/* Border colors */
+/* Background colors */
+/* Button Colors */
 /* Font Stacks */
-/* Import All Settings */
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
-  color: #1B1F2B;
+  color: "#1B1F2B";
   line-height: 1.5;
 }
 
 a {
-  color: #455DA3;
+  color: "#455DA3";
   text-decoration: none;
 }
 a:hover {
-  color: #122A70;
+  color: "#122A70";
   text-decoration: underline;
+}
+
+.u-font-weight-100 {
+  font-weight: 100;
+}
+
+.u-font-weight-200 {
+  font-weight: 200;
+}
+
+.u-font-weight-300 {
+  font-weight: 300;
+}
+
+.u-font-weight-400 {
+  font-weight: 400;
+}
+
+.u-font-weight-500 {
+  font-weight: 500;
+}
+
+.u-font-weight-600 {
+  font-weight: 600;
+}
+
+.u-font-weight-700 {
+  font-weight: 700;
+}
+
+.u-font-weight-800 {
+  font-weight: 800;
+}
+
+.u-font-weight-900 {
+  font-weight: 900;
+}
+
+.u-font-size-0 {
+  font-size: 0;
+}
+
+.u-line-height-0 {
+  line-height: 0;
+}
+
+.u-font-size-100 {
+  font-size: 0.75;
+}
+
+.u-line-height-100 {
+  line-height: 0.75;
+}
+
+.u-font-size-200 {
+  font-size: 0.875;
+}
+
+.u-line-height-200 {
+  line-height: 0.875;
+}
+
+.u-font-size-300 {
+  font-size: 1;
+}
+
+.u-line-height-300 {
+  line-height: 1;
+}
+
+.u-font-size-400 {
+  font-size: 1.25;
+}
+
+.u-line-height-400 {
+  line-height: 1.25;
+}
+
+.u-font-size-500 {
+  font-size: 1.5;
+}
+
+.u-line-height-500 {
+  line-height: 1.5;
+}
+
+.u-font-size-600 {
+  font-size: 1.75;
+}
+
+.u-line-height-600 {
+  line-height: 1.75;
+}
+
+.u-font-size-700 {
+  font-size: 2.125;
+}
+
+.u-line-height-700 {
+  line-height: 2.125;
+}
+
+.u-font-size-800 {
+  font-size: 2.625;
+}
+
+.u-line-height-800 {
+  line-height: 2.625;
+}
+
+.u-font-size-900 {
+  font-size: 3;
+}
+
+.u-line-height-900 {
+  line-height: 3;
+}
+
+.u-font-size-1000 {
+  font-size: 3.75;
+}
+
+.u-line-height-1000 {
+  line-height: 3.75;
+}
+
+.u-font-size-1100 {
+  font-size: 4.5;
+}
+
+.u-line-height-1100 {
+  line-height: 4.5;
+}
+
+.u-font-size-1200 {
+  font-size: 5.25;
+}
+
+.u-line-height-1200 {
+  line-height: 5.25;
 }

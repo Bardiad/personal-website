@@ -2,12 +2,12 @@
 	"project" : {
 		"source" : "/src",
 		"destination" : "/dist",
-		"watch" : ["./src/**/*"],
+		"watch" : ["./src/**/*", "!./src/_temp/**/*"],
 		"inputs" : {
-			"scss" : ["./src/styles/*.scss"]
+			"scss" : ["./src/_temp/*.scss"]
 		},
 		"outputs" : {
-			"css" : ["./dist/css/"]
+			"css" : "./dist/css/"
 		}
 	},
 
