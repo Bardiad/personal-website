@@ -1,4 +1,4 @@
-$colors : (
+$colorsets : (
 {% for setName, set in data.STYLES.colorsets %}
 	"{{setName}}" : (
 	{%- for _step, _value in set -%}

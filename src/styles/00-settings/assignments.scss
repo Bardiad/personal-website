@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "aliases" as alias;
+@use "tokens.colorsets" as *;
+@use "tokens.typography" as type;
+
+
+/*Basic assignments */
+$color-text-base: 			map.get($colorsets, "grey", "900");
+$color-text-light:   		map.get($colorsets, "grey", "100");
+$color-text-dark:    		map.get($colorsets, "grey", "700");
+
+$color-text-link:       	map.get($colorsets, "ocean-blue", "400");
+$color-text-link-hover: 	map.get($colorsets, "ocean-blue", "600");
+
+$color-background-darkest:	map.get($colorsets, "midnight-blue", "800" );
+$color-background-darker:	map.get($colorsets, "midnight-blue", "700" );
+$color-background-dark:		map.get($colorsets, "midnight-blue", "600" );
+$color-background-mid:		map.get($colorsets, "grey", "200" );
+$color-background-light:	map.get($colorsets, "ocean-blue", "400" );
+$color-background-lighter:	map.get($colorsets, "ocean-blue", "200" );
+$color-background-lightest:	map.get($colorsets, "ocean-blue", "100" );
+
+
+/* ***************** */
+/* Alias Assignments */
+/* ***************** */
+
+/* ====== Colours ===== */
+$color-background-button-primary:   	  alias.$color-background-primary;
+$color-background-button-primary-hover:   alias.$color-background-primary-hover;
+
+$color-border-button-primary:   	  	  alias.$color-border-primary;
+$color-border-button-primary-hover:   	  alias.$color-border-primary;
+
+$color-border-button-primary-focus:       alias.$color-border-focus;
+$color-border-button-primary-focus-inner: alias.$color-border-primary;
+
+$color-text-button-primary:				  alias.$color-text-primary;
+$color-text-button-primary-hover:      	  alias.$color-text-primary-hover;
+
+
+$color-background-button-secondary:   	  	alias.$color-background-secondary;
+$color-background-button-secondary-hover: 	alias.$color-background-secondary-hover;
+
+$color-border-button-secondary:   	  	  	alias.$color-border-secondary;
+$color-border-button-secondary-hover:   	alias.$color-border-secondary;
+
+$color-border-button-secondary-focus:       alias.$color-border-focus;
+$color-border-button-secondary-focus-inner: alias.$color-border-secondary;
+
+$color-text-button-secondary:				alias.$color-text-secondary;
+$color-text-button-secondary-hover:      	alias.$color-text-secondary-hover;
+
+
+$color-background-button-tertiary:   	  	alias.$color-background-tertiary;
+$color-background-button-tertiary-hover: 	alias.$color-background-tertiary-hover;
+
+$color-border-button-tertiary:   	  	  	alias.$color-border-tertiary;
+$color-border-button-tertiary-hover:   		alias.$color-border-tertiary;
+
+$color-border-button-tertiary-focus:        alias.$color-border-focus;
+$color-border-button-tertiary-focus-inner:  alias.$color-border-tertiary;
+
+$color-text-button-tertiary:				alias.$color-text-tertiary;
+$color-text-button-tertiary-hover:      	alias.$color-text-tertiary-hover;
+
+/* ====== Font Stacks ===== */
+$fontstack-primary:   type.$global-font-sans;
+$fontstack-secondary: type.$global-font-serif;
+$fontstack-monospace: type.$global-font-monospace;
+$fontstack-special:   type.$global-font-special;
+
+$font-family-logo: $fontstack-special;

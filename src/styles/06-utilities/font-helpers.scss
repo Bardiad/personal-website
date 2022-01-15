@@ -23,7 +23,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 }
 
 //Generate text color utility classes
-@each $colorset, $set in config.$tokens-colors {
+@each $colorset, $set in config.$tokens-colorsets {
 	@each $step, $value in $set {
 		.u-font-color-#{$colorset}-#{$step} {
 			color:$value;

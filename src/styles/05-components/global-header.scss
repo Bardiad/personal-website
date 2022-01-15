@@ -1,0 +1,14 @@
+@use "../00-settings/" as config;
+@use "sass:map";
+
+.c-global-header {
+	display:flex;
+	padding:8px 24px;
+	justify-content:space-between;
+	flex:0;
+
+
+	// .c-logo {
+	// 	display:inline-block;
+	// }
+}
