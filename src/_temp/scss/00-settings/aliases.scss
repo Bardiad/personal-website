@@ -1,0 +1,104 @@
+@use "sass:map";
+
+@use "colors" as *;
+@use "typography" as type;
+@use "scales" as scale;
+
+/* Text Colors */
+$color-text-default: 			map.get($colors, "grey", "900");
+$color-text-light:   			map.get($colors, "grey", "100");
+$color-text-dark:    			map.get($colors, "grey", "700");
+
+$color-text-link:       		map.get($colors, "ocean-blue", "400");
+$color-text-link-hover: 		map.get($colors, "ocean-blue", "600");
+
+$color-text-primary: 			map.get($colors, "reference", "white");
+$color-text-primary-hover:		map.get($colors, "grey", "200");
+
+$color-text-secondary:			map.get($colors, "ocean-blue", "500");
+$color-text-secondary-hover:	map.get($colors, "ocean-blue", "900");
+
+$color-text-tertiary:			map.get($colors, "ocean-blue", "500");
+$color-text-tertiary-hover:		map.get($colors, "ocean-blue", "900");
+
+
+/* Border colors */
+$color-border-focus:			map.get($colors, "ocean-blue", "200" );
+
+$color-border-primary:			map.get($colors, "ocean-blue", "500" );
+$color-border-primary-hover:	map.get($colors, "ocean-blue", "600" );
+
+$color-border-secondary:		map.get($colors, "ocean-blue", "500" );
+$color-border-secondary-hover:	map.get($colors, "ocean-blue", "900" );
+
+$color-border-tertiary:			map.get($colors, "grey", "100" );
+$color-border-tertiary-hover:	map.get($colors, "grey", "200" );
+
+/* Background colors */
+$color-background-default: 			map.get($colors, grey, "100");
+
+$color-background-hero:    			map.get($colors, "midnight-blue", "500");
+$color-background-header:  			map.get($colors, "midnight-blue", "700" );
+
+$color-background-primary:			map.get($colors, "ocean-blue", "500" );
+$color-background-primary-hover:	map.get($colors, "ocean-blue", "600" );
+
+$color-background-secondary:		map.get($colors, "ocean-blue", "100" );
+$color-background-secondary-hover:	map.get($colors, "ocean-blue", "200" );
+
+$color-background-tertiary:			map.get($colors, "grey", "100" );
+$color-background-tertiary-hover:	map.get($colors, "grey", "200" );
+
+
+
+
+/* Button Colors */
+
+//Primary Button
+$color-background-button-primary:   	  $color-background-primary;
+$color-background-button-primary-hover:   $color-background-primary-hover;
+
+$color-border-button-primary:   	  	  $color-border-primary;
+$color-border-button-primary-hover:   	  $color-border-primary;
+
+$color-border-button-primary-focus:       $color-border-focus;
+$color-border-button-primary-focus-inner: $color-border-primary;
+
+$color-text-button-primary:				  $color-text-primary;
+$color-text-button-primary-hover:      	  $color-text-primary-hover;
+
+
+//Secondary Button
+$color-background-button-secondary:   	  	$color-background-secondary;
+$color-background-button-secondary-hover: 	$color-background-secondary-hover;
+
+$color-border-button-secondary:   	  	  	$color-border-secondary;
+$color-border-button-secondary-hover:   	$color-border-secondary;
+
+$color-border-button-secondary-focus:       $color-border-focus;
+$color-border-button-secondary-focus-inner: $color-border-secondary;
+
+$color-text-button-secondary:				$color-text-secondary;
+$color-text-button-secondary-hover:      	$color-text-secondary-hover;
+
+
+//Tertiary Button
+$color-background-button-tertiary:   	  	$color-background-tertiary;
+$color-background-button-tertiary-hover: 	$color-background-tertiary-hover;
+
+$color-border-button-tertiary:   	  	  	$color-border-tertiary;
+$color-border-button-tertiary-hover:   		$color-border-tertiary;
+
+$color-border-button-tertiary-focus:        $color-border-focus;
+$color-border-button-tertiary-focus-inner:  $color-border-tertiary;
+
+$color-text-button-tertiary:				$color-text-tertiary;
+$color-text-button-tertiary-hover:      	$color-text-tertiary-hover;
+
+/* Font Stacks */
+$fontstack-primary:   type.$global-font-sans;
+$fontstack-secondary: type.$global-font-serif;
+$fontstack-monospace: type.$global-font-monospace;
+$fontstack-special:   type.$global-font-special;
+
+$font-family-logo: $fontstack-special;
