@@ -1,0 +1,10 @@
+@use "../00-settings" as config;
+@use "../01-tools/helpers" as util;
+
+@each $colorset, $set in config.$tokens-colors {
+	@each $step, $value in $set {
+		.u-bg-color-#{$colorset}-#{$step} {
+			background:$value;
+		}
+	}
+}

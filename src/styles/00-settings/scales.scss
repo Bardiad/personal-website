@@ -1,12 +1,12 @@
 @use "../01-tools/" as util;
 
-$static-sizes: (
+$static-scale: (
 {% for size, value in data.STYLES.scales.spacing %}
 "{{size}}" : util.convert-pxToRem({{value}}){% if not loop.last %},{% endif %}
 {%- endfor -%}        
 );
 
-$static-fontsizes: (
+$static-fontscale: (
 {% for size, value in data.STYLES.scales.type %}
 "{{size}}" : util.convert-pxToRem({{value}}){% if not loop.last %},{% endif %}
 {%- endfor -%} 

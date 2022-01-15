@@ -1,0 +1,64 @@
+@use "../00-settings" as config;
+@use "../01-tools/helpers" as util;
+
+@each $level, $value in config.$tokens-static-scale {
+  .u-padding-#{$level} {
+    padding:$value;
+  }
+
+  .u-padding-x-#{$level} {
+    padding-left:$value;
+    padding-right:$value;
+  }
+
+  .u-padding-y-#{$level} {
+    padding-top:$value;
+    padding-bottom:$value;
+  }
+
+  .u-padding-t-#{$level} {
+    padding-top:$value;
+  }
+
+  .u-padding-b-#{$level} {
+    padding-bottom:$value;
+  }
+
+  .u-padding-l-#{$level} {
+    padding-top:$value;
+  }
+
+  .u-padding-r-#{$level} {
+    padding-bottom:$value;
+  }
+
+  .u-margin-#{$level} {
+    margin:$value;
+  }
+
+  .u-margin-x-#{$level} {
+    margin-left:$value;
+    margin-right:$value;
+  }
+
+  .u-margin-y-#{$level} {
+    margin-top:$value;
+    margin-bottom:$value;
+  }
+
+  .u-margin-t-#{$level} {
+    margin-top:$value;
+  }
+
+  .u-margin-b-#{$level} {
+    margin-bottom:$value;
+  }
+
+  .u-margin-l-#{$level} {
+    margin-top:$value;
+  }
+
+  .u-margin-r-#{$level} {
+    margin-bottom:$value;
+  }  
+}

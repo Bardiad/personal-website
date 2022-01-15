@@ -1,0 +1,8 @@
+{%- macro Link(props) -%}
+	{% set to = props.to if props.to else "#" %}
+	{% set label = props.label if props.label else "See more" %}
+	{% set classList = props.classList if props.classList else null %}
+	<a href="{{to}}" class="o-link{%-if classList -%} {{classList}}{%-endif-%}">
+		{{ label }}
+	</a>
+{%- endmacro -%}

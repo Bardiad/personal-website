@@ -1,0 +1,19 @@
+{%- macro Button(props) -%}
+	{%- set _to = props.to if props.to -%}
+
+	{%- set _label = props.label if props.label else "See more" -%}
+	{%- set _type = props.type if props.type else "primary" -%}
+	{%- set _size = props.size if props.size else "md" -%}	
+	{%- set _id = props.id if props.id -%}
+
+	{%- if _to -%}
+	<a href="{{_to}}" class="c-button c-button--{{_type}} c-button--{{_size}}">
+		<span class="c-button__label">{{ _label }}</span>
+	</a>
+	{%- else -%}
+	{%- set _hook = props.hook if props.hook -%}
+	<button {% if _hook %} data-hook="{{_hook}}" {%- endif -%}{%- if _id -%}id="{{_id}}" {% endif %}class="c-button c-button--{{_type}} c-button--{{_size}}">
+		<span class="c-button__label">{{ _label }}</span>
+	</button>			
+	{%- endif -%}
+{%- endmacro -%}

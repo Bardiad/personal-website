@@ -1,3 +1,7 @@
+{%- from "components/component.logo.njk" import Logo with context -%}
+{%- from "components/component.link.njk" import Link with context -%}
+{%- from "components/component.button.njk" import Button with context -%}
+
 <!DOCTYPE html>
 <html lang="{{PAGE.lang or META.lang}}">
   <head>
@@ -16,7 +20,9 @@
   </head>
 
   <body>
+    {% include "fragments/fragment.header.njk" %}
     {% block body %}{% endblock %}
+    {% include "fragments/fragment.footer.njk" %}
   </body>
 
 </html>

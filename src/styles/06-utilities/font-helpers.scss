@@ -11,8 +11,8 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	}
 }
 
-//Generate font size  and line height utility classes
-@each $size, $value in config.$tokens-static-fontsizes {
+//Generate font size and line height utility classes
+@each $size, $value in config.$tokens-static-fontscale {
 	.u-font-size-#{$size} {
 		font-size: $value;
 	}
@@ -20,4 +20,13 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 	.u-line-height-#{$size} {
 		line-height: $value;
 	}	
+}
+
+//Generate text color utility classes
+@each $colorset, $set in config.$tokens-colors {
+	@each $step, $value in $set {
+		.u-font-color-#{$colorset}-#{$step} {
+			color:$value;
+		}
+	}
 }
