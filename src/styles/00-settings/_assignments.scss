@@ -1,20 +1,29 @@
 @use "sass:map";
-@use "aliases" as alias;
 @use "tokens.colorsets" as *;
+@use "tokens.scales" as *;
 @use "tokens.typography" as type;
 
+@use "aliases" as alias;
 
 /*Basic assignments */
 $color-text-base: 			map.get($colorsets, "grey", "900");
-$color-text-light:   		map.get($colorsets, "grey", "100");
+
+$color-text-black:   		map.get($colorsets, "reference", "black");
+$color-text-darkest:    	map.get($colorsets, "grey", "900");
+$color-text-darker:    		map.get($colorsets, "grey", "800");
 $color-text-dark:    		map.get($colorsets, "grey", "700");
+$color-text-mid:   			map.get($colorsets, "grey", "500");
+$color-text-light:   		map.get($colorsets, "grey", "400");
+$color-text-lighter:   		map.get($colorsets, "grey", "300");
+$color-text-lightest:   	map.get($colorsets, "grey", "100");
+$color-text-white:   		map.get($colorsets, "reference", "white");
 
 $color-text-link:       	map.get($colorsets, "ocean-blue", "400");
 $color-text-link-hover: 	map.get($colorsets, "ocean-blue", "600");
 
-$color-background-darkest:	map.get($colorsets, "midnight-blue", "800" );
-$color-background-darker:	map.get($colorsets, "midnight-blue", "700" );
-$color-background-dark:		map.get($colorsets, "midnight-blue", "600" );
+$color-background-darkest:	map.get($colorsets, "midnight-blue", "700" );
+$color-background-darker:	map.get($colorsets, "midnight-blue", "600" );
+$color-background-dark:		map.get($colorsets, "midnight-blue", "500" );
 $color-background-mid:		map.get($colorsets, "grey", "200" );
 $color-background-light:	map.get($colorsets, "ocean-blue", "400" );
 $color-background-lighter:	map.get($colorsets, "ocean-blue", "200" );
@@ -24,6 +33,11 @@ $color-background-lightest:	map.get($colorsets, "ocean-blue", "100" );
 /* ***************** */
 /* Alias Assignments */
 /* ***************** */
+
+/* ====== Sizing ===== */
+$padding-button-sm:1rem 1.125rem;
+$padding-button-md:1rem 1.125rem;
+$padding-button-lg:1rem 1.125rem;
 
 /* ====== Colours ===== */
 $color-background-button-primary:   	  alias.$color-background-primary;
@@ -69,5 +83,7 @@ $fontstack-primary:   type.$global-font-sans;
 $fontstack-secondary: type.$global-font-serif;
 $fontstack-monospace: type.$global-font-monospace;
 $fontstack-special:   type.$global-font-special;
+
+
 
 $font-family-logo: $fontstack-special;

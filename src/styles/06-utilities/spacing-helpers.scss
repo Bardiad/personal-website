@@ -1,7 +1,10 @@
 @use "../00-settings" as config;
 @use "../01-tools/helpers" as util;
+@use "sass:map";
 
-@each $level, $value in config.$tokens-static-scale {
+$spacingScale: map.get(config.$tokens-scales, "spacing");
+
+@each $level, $value in $spacingScale {
   .u-padding-#{$level} {
     padding:$value;
   }

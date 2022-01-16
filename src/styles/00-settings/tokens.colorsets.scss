@@ -2,7 +2,7 @@ $colorsets : (
 {% for setName, set in data.STYLES.colorsets %}
 	"{{setName}}" : (
 	{%- for _step, _value in set -%}
-		"{{_step}}" : "{{_value}}"{%- if not loop.last -%},{%- endif -%} 
+		"{{_step}}" : {{_value}}{%- if not loop.last -%},{%- endif -%} 
 	{%- endfor -%}
 	){%- if not loop.last -%},{%- endif -%} 
 {% endfor %}

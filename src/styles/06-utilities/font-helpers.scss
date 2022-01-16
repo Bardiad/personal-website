@@ -2,7 +2,9 @@
 @use "../01-tools/helpers" as util;
 
 @use "sass:map";
+
 $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+$typeScale: map.get(config.$tokens-scales, "type");
 
 //Generate font weight utility classes
 @each $weight in $weights {
@@ -12,12 +14,12 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 }
 
 //Generate font size and line height utility classes
-@each $size, $value in config.$tokens-static-fontscale {
-	.u-font-size-#{$size} {
+@each $step, $value in $typeScale {
+	.u-font-size-#{$step} {
 		font-size: $value;
 	}
 
-	.u-line-height-#{$size} {
+	.u-line-height-#{$step} {
 		line-height: $value;
 	}	
 }

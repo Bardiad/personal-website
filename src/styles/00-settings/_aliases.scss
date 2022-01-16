@@ -1,7 +1,7 @@
 @use "sass:map";
 
 @use "tokens.colorsets" as *;
-@use "tokens.scales" as scales;
+@use "tokens.scales" as *;
 
 /* Text Colors */
 $color-text-primary: 			map.get($colorsets, "reference", "white");

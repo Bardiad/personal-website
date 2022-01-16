@@ -1,3 +1,65 @@
-.c-button {
+@use "sass:map";
+@use "../00-settings/" as config;
 
+.c-button {
+	display:inline-block;
+	outline:0;
+	outline-offset: 1px;
+
+}
+
+.c-button--sm {
+	padding:config.$alias-padding-button-sm;
+}
+
+.c-button--md {
+	padding:config.$alias-padding-button-md;
+}
+
+.c-button--lg {
+	padding:config.$alias-padding-button-lg;
+}
+
+.c-button--primary {
+	background:config.$alias-color-background-button-primary;
+	color:config.$alias-color-text-button-primary;
+	outline-color: config.$alias-color-border-button-primary-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-primary-hover;
+		color:config.$alias-color-text-button-primary-hover;		
+	}	
+
+}
+
+.c-button--secondary {
+	background:config.$alias-color-background-button-secondary;
+	color:config.$alias-color-text-button-secondary;
+	outline-color: config.$alias-color-border-button-secondary-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-secondary-hover;
+		color:config.$alias-color-text-button-secondary-hover;		
+	}		
+}
+
+.c-button--tertiary {
+	background:config.$alias-color-background-button-tertiary;
+	color:config.$alias-color-text-button-tertiary;
+	outline-color: config.$alias-color-border-button-tertiary-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-tertiary-hover;
+		color:config.$alias-color-text-button-tertiary-hover;		
+	}	
+}
+
+.c-button--ghost {
+	background:transparent;
+	color:config.$alias-color-text-white;
+	border:2px solid transparent;
+
+	&:active {
+		border:2px solid map.get(config.$tokens-colorsets, "reference", "white");
+	}
 }

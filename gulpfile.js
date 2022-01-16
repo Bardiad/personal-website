@@ -40,7 +40,7 @@ function _startConnect(callback) {
 }
 
 function _clean(callback) {
-    return src([global.SOURCES_BASE_PATH + "/_temp/", global.BUILD_PATH], {read:false})
+    return src([global.SOURCES_BASE_PATH + "/_temp/", global.BUILD_PATH, "!" + global.BUILD_PATH + "/img/"], {read:false})
     .pipe(clean())
 }
 function _watchFiles(callback) {
@@ -49,7 +49,7 @@ function _watchFiles(callback) {
 }
 
 /* Composite tasks */
-const _buildTasks = series(_buildHTML, _buildSCSS, _buildCSS);
+const _buildTasks = series(_clean, _buildHTML, _buildSCSS, _buildCSS);
 const _serve = parallel(_buildTasks, _startConnect, _watchFiles);
 
 /* ***************** */
