@@ -5,8 +5,95 @@
 	display:inline-block;
 	outline:0;
 	outline-offset: 1px;
+	border:1px solid transparent;
+	transition:border-color .4s ease, background .4s ease, color .4s ease;
+	
+	&:focus, &:active {
+		outline:3px solid;
 
+	}
 }
+
+.c-button--primary {
+	background:config.$alias-color-background-button-primary;
+	color:config.$alias-color-text-button-primary;
+	outline-color: config.$alias-color-border-button-primary-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-primary-hover;
+		color:config.$alias-color-text-button-primary-hover;
+		border-color: config.$alias-color-border-button-primary-hover;	
+	}
+
+	&:active, &:focus {
+		border-color: config.$alias-color-border-button-primary-focus-inner;
+	}
+}
+
+.c-button--secondary {
+	background:config.$alias-color-background-button-secondary;
+	color:config.$alias-color-text-button-secondary;
+	outline-color: config.$alias-color-border-button-secondary-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-secondary-hover;
+		color:config.$alias-color-text-button-secondary-hover;
+		border-color: config.$alias-color-border-button-secondary-hover;	
+	}
+
+	&:active, &:focus {
+		border-color: config.$alias-color-border-button-secondary-focus-inner;
+	}		
+}
+
+.c-button--tertiary {
+	background:config.$alias-color-background-button-tertiary;
+	color:config.$alias-color-text-button-tertiary;
+	outline-color: config.$alias-color-border-button-tertiary-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-tertiary-hover;
+		color:config.$alias-color-text-button-tertiary-hover;
+		border-color: config.$alias-color-border-button-tertiary-hover;	
+	}
+
+	&:active, &:focus {
+		border-color: config.$alias-color-border-button-tertiary-focus-inner;
+	}			
+}
+
+.c-button--ghost-light {
+	background:config.$alias-color-background-button-ghost-light;
+	color:config.$alias-color-text-button-ghost-light;
+	outline-color: config.$alias-color-border-button-ghost-light-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-ghost-light-hover;
+		color:config.$alias-color-text-button-ghost-light-hover;
+		border-color: config.$alias-color-border-button-ghost-light-hover;	
+	}
+
+	&:active, &:focus {
+		border-color: config.$alias-color-border-button-ghost-light-focus-inner;
+	}	
+}
+
+.c-button--ghost-dark {
+	background:config.$alias-color-background-button-ghost-dark;
+	color:config.$alias-color-text-button-ghost-dark;
+	outline-color: config.$alias-color-border-button-ghost-dark-focus;	
+
+	&:hover {
+		background:config.$alias-color-background-button-ghost-dark-hover;
+		color:config.$alias-color-text-button-ghost-dark-hover;
+		border-color: config.$alias-color-border-button-ghost-dark-hover;	
+	}
+
+	&:active, &:focus {
+		border-color: config.$alias-color-border-button-ghost-dark-focus-inner;
+	}	
+}
+
 
 .c-button--sm {
 	padding:config.$alias-padding-button-sm;
@@ -18,48 +105,4 @@
 
 .c-button--lg {
 	padding:config.$alias-padding-button-lg;
-}
-
-.c-button--primary {
-	background:config.$alias-color-background-button-primary;
-	color:config.$alias-color-text-button-primary;
-	outline-color: config.$alias-color-border-button-primary-focus;	
-
-	&:hover {
-		background:config.$alias-color-background-button-primary-hover;
-		color:config.$alias-color-text-button-primary-hover;		
-	}	
-
-}
-
-.c-button--secondary {
-	background:config.$alias-color-background-button-secondary;
-	color:config.$alias-color-text-button-secondary;
-	outline-color: config.$alias-color-border-button-secondary-focus;	
-
-	&:hover {
-		background:config.$alias-color-background-button-secondary-hover;
-		color:config.$alias-color-text-button-secondary-hover;		
-	}		
-}
-
-.c-button--tertiary {
-	background:config.$alias-color-background-button-tertiary;
-	color:config.$alias-color-text-button-tertiary;
-	outline-color: config.$alias-color-border-button-tertiary-focus;	
-
-	&:hover {
-		background:config.$alias-color-background-button-tertiary-hover;
-		color:config.$alias-color-text-button-tertiary-hover;		
-	}	
-}
-
-.c-button--ghost {
-	background:transparent;
-	color:config.$alias-color-text-white;
-	border:2px solid transparent;
-
-	&:active {
-		border:2px solid map.get(config.$tokens-colorsets, "reference", "white");
-	}
 }

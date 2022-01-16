@@ -53,6 +53,7 @@ $color-text-button-primary:				  alias.$color-text-primary;
 $color-text-button-primary-hover:      	  alias.$color-text-primary-hover;
 
 
+
 $color-background-button-secondary:   	  	alias.$color-background-secondary;
 $color-background-button-secondary-hover: 	alias.$color-background-secondary-hover;
 
@@ -66,6 +67,7 @@ $color-text-button-secondary:				alias.$color-text-secondary;
 $color-text-button-secondary-hover:      	alias.$color-text-secondary-hover;
 
 
+
 $color-background-button-tertiary:   	  	alias.$color-background-tertiary;
 $color-background-button-tertiary-hover: 	alias.$color-background-tertiary-hover;
 
@@ -77,6 +79,36 @@ $color-border-button-tertiary-focus-inner:  alias.$color-border-tertiary;
 
 $color-text-button-tertiary:				alias.$color-text-tertiary;
 $color-text-button-tertiary-hover:      	alias.$color-text-tertiary-hover;
+
+
+
+$color-background-button-ghost-light:   	  	transparent;
+$color-background-button-ghost-light-hover: 	transparent;
+
+$color-border-button-ghost-light:   	  	  	transparent;
+$color-border-button-ghost-light-hover:   		transparent;
+
+$color-border-button-ghost-light-focus:        	map.get($colorsets, "reference", "white");
+$color-border-button-ghost-light-focus-inner:  	map.get($colorsets, "ocean-blue", "300");
+
+$color-text-button-ghost-light:					map.get($colorsets, "reference", "white");
+$color-text-button-ghost-light-hover:      		map.get($colorsets, "grey", "300");
+
+
+
+$color-background-button-ghost-dark:   	  	    transparent;
+$color-background-button-ghost-dark-hover: 	    transparent;
+
+$color-border-button-ghost-dark:   	  	  	    transparent;
+$color-border-button-ghost-dark-hover:   		transparent;
+
+$color-border-button-ghost-dark-focus:        	map.get($colorsets, "ocean-blue", "300");
+$color-border-button-ghost-dark-focus-inner:  	map.get($colorsets, "ocean-blue", "800");
+
+$color-text-button-ghost-dark:					map.get($colorsets, "ocean-blue", "500");
+$color-text-button-ghost-dark-hover:      		map.get($colorsets, "ocean-blue", "700");
+
+
 
 /* ====== Font Stacks ===== */
 $fontstack-primary:   type.$global-font-sans;
