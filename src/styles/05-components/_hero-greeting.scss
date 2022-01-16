@@ -1,0 +1,6 @@
+@use "../00-settings/" as config;
+@use "sass:map";
+
+.c-hero-greeting {
+	color: map.get(config.$tokens-colorsets, "reference", "white");
+}
