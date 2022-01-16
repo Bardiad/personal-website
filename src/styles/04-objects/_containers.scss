@@ -1,5 +1,8 @@
-.o-container {
+@use "../00-settings/" as config;
+@use "sass:map";
 
+.o-container {
+	padding:map.get(config.$tokens-scales, "spacing", "700") map.get(config.$tokens-scales, "spacing", "300");
 }
 
 .o-content-container {

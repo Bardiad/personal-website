@@ -3,4 +3,9 @@
 
 .c-hero-greeting {
 	color: map.get(config.$tokens-colorsets, "reference", "white");
+
+	p {
+		font-size:map.get(config.$tokens-scales, "type", "600");
+		line-height:map.get(config.$tokens-scales, "type", "800");
+	}
 }
