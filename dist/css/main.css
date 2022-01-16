@@ -339,6 +339,11 @@ template {
   display: none;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 /* Text Colors */
 /* Border colors */
 /* Background colors */
@@ -374,6 +379,10 @@ a:hover {
 .o-main-container {
   flex: 1 0 auto;
   width: 100%;
+}
+
+.o-max-width-container {
+  max-width: 1440px;
 }
 
 .c-button {
@@ -444,6 +453,10 @@ a:hover {
 
 .c-global-footer {
   flex: 0;
+}
+
+.c-hero-greeting {
+  color: #FFFFFF;
 }
 
 .u-font-weight-100 {
