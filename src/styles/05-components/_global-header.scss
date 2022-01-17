@@ -3,7 +3,7 @@
 
 .c-global-header {
 	display:flex;
-	padding:8px 24px;
+	padding:map.get(config.$tokens-scales, "spacing", "100") map.get(config.$tokens-scales, "spacing", "300");
 	align-items:center;
 	justify-content:space-between;
 	flex:0;

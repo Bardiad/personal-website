@@ -1,3 +1,9 @@
 @forward "link";
 @forward "main-container";
 @forward "containers";
+
+// Fluid images
+.o-fluid-img {
+	max-width:100%;
+	height:auto;
+}

@@ -1,5 +1,16 @@
+@use "../00-settings/" as config;
+@use "sass:map";
+
 .c-logo {
+	font-family:config.$alias-fontstack-special;
+	
 	&__inner {
 		margin:0;
+		font-size: map.get(config.$tokens-scales, "type", "300");
+		line-height: map.get(config.$tokens-scales, "type", "400");
+	}
+
+	&__thatguy {
+		font-weight:900;
 	}
 }

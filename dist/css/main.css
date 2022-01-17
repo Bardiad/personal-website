@@ -344,6 +344,10 @@ p {
   margin-bottom: 1rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 /* Text Colors */
 /* Border colors */
 /* Background colors */
@@ -354,6 +358,42 @@ p {
 /* ====== Sizing ===== */
 /* ====== Colours ===== */
 /* ====== Font Stacks ===== */
+h1 {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  margin-bottom: 0.5rem;
+}
+
 html {
   height: 100%;
 }
@@ -382,12 +422,17 @@ a:hover {
 }
 
 .o-container {
-  padding: 3.5rem 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .o-max-width-container {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.o-fluid-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .c-button {
@@ -485,7 +530,7 @@ a:hover {
 
 .c-global-header {
   display: flex;
-  padding: 8px 24px;
+  padding: 0.5rem 1.5rem;
   align-items: center;
   justify-content: space-between;
   flex: 0;
@@ -507,9 +552,28 @@ a:hover {
   font-size: 1.75rem;
   line-height: 2.375rem;
 }
+.c-hero-greeting .c-hero-greeting__cta-label {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
 
+.c-fancy-heading {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2.125rem;
+}
+
+.c-logo {
+  font-family: "Rubik", Helvetica, Arial, Verdana, sans-serif;
+}
 .c-logo__inner {
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.c-logo__thatguy {
+  font-weight: 900;
 }
 
 .u-font-weight-100 {

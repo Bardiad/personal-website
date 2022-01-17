@@ -1,2 +1,17 @@
+@use "sass:map";
+@use "../00-settings/" as config;
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&family=Ubuntu+Mono&display=swap');
 
+p {
+
+}
+
+
+
+h1 { font-size:map.get(config.$tokens-scales, "type", "1100"); line-height:map.get(config.$tokens-scales, "type", "1200"); margin-bottom: map.get(config.$tokens-scales, "spacing", "500"); }
+h2 { font-size:map.get(config.$tokens-scales, "type", "1100"); line-height:map.get(config.$tokens-scales, "type", "1200"); margin-bottom: map.get(config.$tokens-scales, "spacing", "400"); }
+h3 { font-size:map.get(config.$tokens-scales, "type", "1100"); line-height:map.get(config.$tokens-scales, "type", "1200"); margin-bottom: map.get(config.$tokens-scales, "spacing", "300"); }
+h4 { font-size:map.get(config.$tokens-scales, "type", "1100"); line-height:map.get(config.$tokens-scales, "type", "1200"); margin-bottom: map.get(config.$tokens-scales, "spacing", "200"); }
+h5 { font-size:map.get(config.$tokens-scales, "type", "1100"); line-height:map.get(config.$tokens-scales, "type", "1200"); margin-bottom: map.get(config.$tokens-scales, "spacing", "100"); }
+h6 { font-size:map.get(config.$tokens-scales, "type", "1100"); line-height:map.get(config.$tokens-scales, "type", "1200"); margin-bottom: map.get(config.$tokens-scales, "spacing", "100"); }
